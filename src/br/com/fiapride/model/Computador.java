@@ -1,39 +1,44 @@
 package br.com.fiapride.model;
 
 public class Computador {
-	public String preco;
-	public String memoria;
-	public double tamanho;
 
-	public Computador(String preco, String memoria) {
-		this.preco = preco;
-		this.memoria = memoria
-		this.tamanho = 70.5
+    public double tamanho;
+    public int memoria;
+    public double preco;
+
+    // Construtor
+    public Computador(double tamanho, int memoria, double preco) {
+        this.tamanho = tamanho;
+        this.memoria = memoria;
+        this.preco = preco;
+    }
+
+    public void novoComputador(double valor) {
+
+        if (valor >= 7000) {
+            System.out.println("Erro: O valor do computador deve ser menor que 7000");
+            return;
+        }
+
+        this.preco = valor;
+
+        System.out.println("Pode comprar o computador por: " + this.preco);
+    }
+
+    public void novoJogo(double jogo) {
+
+        if (jogo <= 0) {
+            System.out.println("Erro: O valor do jogo é inválido.");
+            return;
+        }
+
+        if (this.preco < jogo) {
+            System.out.println("Erro: Saldo insuficiente.");
+            return;
+        }
+
+        this.preco -= jogo;
+
+        System.out.println("Jogo comprado. Valor restante: " + this.preco);
+    }
 }
-
-	public void adicionarSaldo(double valor) {
-		// Regra de negócio: O valor da recarga deve ser positivo
-		if (valor <= 0) {
-			System.out.printIn("Erro: O valor de recarga deve ser maior que zero");
-			
-			return; // Interrompe a execução do método
-		}
- 		this.saldo += valor;
-		System.out.println("Recarga realizada. Novo saldo: " + this.saldo);
-	}
-
- 	public void pagarViagem(double custo) {
-		// Regra de negócio: O custo deve ser positivo e o saldo deve ser suficiente
-
- 		if (custo <= 0) {
- 			System.out.println("Erro: O custo da viagem é inválido.");
- 			return;
- 		}
-		 if (this.saldo < custo) {
- 			System.out.println("Erro: Saldo insuficiente para realizar a viagem.");
- 			return;
- 		}
- 		this.saldo -= custo;
- 			System.out.println("Viagem paga. Saldo restante: " + this.saldo);
- 	}
- }
