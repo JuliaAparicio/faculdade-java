@@ -73,11 +73,3 @@ A classe `SistemaPrincipal` instancia dois computadores e simula:
 
 - Java
 - IDE (Eclipse / IntelliJ)
-
----
-
-## 👩‍💻 Autora
-
-Julia Aparicio  
-Estudante de Ciência da Computação  
-Interesse em Inteligência Artificial, IoT e Lógica de Programação
