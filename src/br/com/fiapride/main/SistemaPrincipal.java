@@ -1,28 +1,31 @@
 package br.com.fiapride.main;
 
+ // Importamos a classe Computador para que o sistema a reconheça
 import br.com.fiapride.model.Computador;
 
 public class SistemaPrincipal {
+
     public static void main(String[] args) {
+     // INSTANCIAÇÃO
+     // O comando 'new' aloca memória para um novo objeto.
+     // Criando o primeiro Computador (Objeto 1)
+    Computador computador1 = new Computador("Ana Silva", "222");
+     System.out.println("Regarga Computador 1");
+    Computador1.adicionarSaldo(50.0);
 
-        // Criando o primeiro computador
-        Computador computador1 = new Computador();
-        computador1.tamanho = 70;
-        computador1.memoria = 50.0;
+     // Criando o segundo Computador (Objeto 2)
+     Computador computador2 = new Computador("Carlos Souza", "333");
+     System.out.println("Regarga Computador 2");
+     computador2.adicionarSaldo(12.5);
 
-        // Criando o segundo computador
-        Computador computador2 = new Computador();
-        computador2.tamanho = 80;
-        computador2.memoria = 12.50;
+     System.out.println("--- Sistema FiapRide ---");
+    System.out.println("Computador: " + Computador1.nome + " | Saldo: R$ " + Computador1.saldo + " | CPF: " + Computador1.cpf);
+    System.out.println("Computador: " + Computador2.nome + " | Saldo: R$ " + Computador2.saldo + " | CPF: " + Computador2.cpf);
 
-        // Exibindo os dados no Console
-        System.out.println("--- Sistema FiapRide ---");
-        System.out.println("Computador: " + computador1.tamanho + 
-                           " | Memória: " + computador1.memoria + "GB");
-        System.out.println("Computador: " + computador2.tamanho + 
-                           " | Memória: " + computador2.memoria + "GB");
+    System.out.println("Pagando viagem do Computador 1");
+     computador1.pagarViagem(20);
+     System.out.println("Pagando viagem do Computador 2");
+     computador2.pagarViagem(20);
 
-        // Teste mental:
-        // Se eu mudar o nome do computador1, o computador2 muda?
     }
 }
